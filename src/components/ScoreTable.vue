@@ -67,6 +67,11 @@ export default {
         {
           name: "Amazon",
           color: "#333",
+          rate: 728214,
+        },
+        {
+          name: "Gricreative",
+          color: "#333",
           rate: 1282514,
         },
         {
@@ -153,8 +158,10 @@ export default {
           let avr = null;
           if (this.year == 2020) return clearInterval(this.b);
 
-          if (item.name == "Faraday") {
+          if (item.name == "Faraday" || item.name == "Gricreative") {
             avr = 9999;
+          } else if (item.name == "Amazon") {
+            avr = 8888;
           } else if (item.name == "Facebook") {
             avr = 6666;
           } else if (item.name == "Intel") {
@@ -163,12 +170,16 @@ export default {
             avr = 1111;
           }
           let _random = Math.floor(Math.random() * avr) + 1;
-          item.rate += _random;
+          if (item.name == "Gricreative") {
+            item.rate -= _random;
+          } else {
+            item.rate += _random;
+          }
         }, 100);
       });
     },
     moreLess: function () {
-      if (this.limit == 7) return (this.limit = this.list.length - 1);
+      if (this.limit == 7) return (this.limit = this.list.length);
       if (this.limit != 7) return (this.limit = 7);
     },
   },
