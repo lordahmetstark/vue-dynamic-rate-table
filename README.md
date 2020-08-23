@@ -1,0 +1,1 @@
+# vue-dynamic-rate-table
