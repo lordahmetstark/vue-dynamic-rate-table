@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img v-if="!isStart" src="./assets/stop.jpg" />
+    <img v-else src="./assets/logo.png" />
+    <div class="buttons">
+      <button @click="reset()">Sıfırla</button>
+      <button @click="start()">Başla</button>
+    </div>
+    <ScoreTable :isStart="isStart" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ScoreTable from "./components/ScoreTable.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    ScoreTable,
+  },
+  data() {
+    return {
+      isStart: false,
+    };
+  },
+  methods: {
+    reset: function () {
+      let vm = this;
+
+      vm.isStart = false;
+    },
+    start: function () {
+      let vm = this;
+
+      vm.isStart = true;
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "@/assets/main.scss";
 </style>
