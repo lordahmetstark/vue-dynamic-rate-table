@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    <img v-if="!isStart" src="./assets/stop.jpg" />
-    <img v-else src="./assets/logo.png" />
+    <git-hub />
+    <logos :isStart="isStart" />
     <div class="buttons">
       <button @click="reset()">Sıfırla</button>
       <button @click="start()">Başla</button>
     </div>
-    <ScoreTable :isStart="isStart" />
+    <score-table :isStart="isStart" />
   </div>
 </template>
 
 <script>
 import ScoreTable from "./components/ScoreTable.vue";
+import GitHub from "./components/GitHub.vue";
+import Logos from "./components/Logos.vue";
 
 export default {
   name: "App",
   components: {
     ScoreTable,
+    GitHub,
+    Logos,
   },
   data() {
     return {

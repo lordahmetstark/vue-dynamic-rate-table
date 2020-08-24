@@ -35,6 +35,8 @@ body {
 }
 
 .buttons {
+	margin: 12px 0 0 0;
+	
 	button {
 		margin: 0 6px;
 
@@ -56,6 +58,7 @@ body {
 
 	&__year {
 		margin: 0 0 36px 0;
+
 		font-size: 24px;
 
 		span {
@@ -87,6 +90,7 @@ body {
 
 		&__bar {
 			margin: 0 0 0 4px;
+
 			width: 20%;
 			height: 40px;
 
@@ -102,5 +106,49 @@ body {
 	&__more {
 		margin: 24px 0 0 0;
 		cursor: pointer;
+	}
+}
+
+.github {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+
+	width: 100%;
+	height: auto;
+
+	margin: 0;
+	padding: 12px 24px;
+
+	&__button {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		margin: 0;
+		padding: 0.75em 1em;
+
+		min-width: 8em;
+
+		font-size: 1.05em;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-align: center;
+
+		background-color: #f6f6f6;
+		color: #4f5959;
+
+		border-color: #f6f6f6;
+		border-radius: 2em;
+
+		text-decoration: none;
+
+		svg {
+			width: 2em;
+
+			margin: 0 6px 0 0;
+		}
 	}
 }

@@ -16,7 +16,6 @@
 
 <script>
 export default {
-  name: "ScoreTable",
   props: {
     isStart: {
       type: Boolean,
@@ -56,6 +55,7 @@ export default {
 
       if (!val) {
         this.year = 1996;
+        this.limit = 7;
         this.init();
         clearInterval(this.t);
       }
@@ -180,7 +180,7 @@ export default {
     },
     moreLess: function () {
       if (this.limit == 7) return (this.limit = this.list.length);
-      if (this.limit != 7) return (this.limit = 7);
+      this.limit = 7;
     },
   },
 };
